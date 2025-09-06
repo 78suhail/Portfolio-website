@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
 import { IoCallOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -81,12 +81,20 @@ const Navbar = () => {
       >
         {/* Header with Icon */}
         <div className="flex justify-between items-center p-4 border-b">
-          <div className="flex items-center space-x-2 pl-4">
-            <RxAvatar className="text-pink-500 text-4xl" />
+          <div className="flex items-center pl-4 space-x-2">
+            {/* Logo Image */}
+            <img
+              src="/Logo.png"
+              alt="Logo"
+              className="w-10 h-10 rounded-full object-cover"
+            />
+
+            {/* Text */}
             <h1 className="text-xl font-bold">
               Prot<span className="text-pink-600">folio</span>
             </h1>
           </div>
+
           <button onClick={() => setMenuOpen(false)}>
             <FaTimes className="text-xl text-gray-700 hover:text-pink-500 transition" />
           </button>
@@ -99,15 +107,17 @@ const Navbar = () => {
               key={index}
               href={item.path}
               className="block text-gray-700 font-medium hover:text-pink-600 cursor-pointer"
-              onClick={() => setMenuOpen(false)} // menu close on click
+              onClick={() => setMenuOpen(false)} 
             >
               {item.name}
             </a>
           ))}
-          <button className="w-full bg-pink-600 text-white px-5 py-2 rounded shadow hover:bg-cyan-600 transition flex items-center justify-center gap-2">
-            <IoCallOutline className="text-white text-[25px]" />
-            Contact Us
-          </button>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>
+            <button className="w-full bg-pink-600 text-white px-5 py-2 rounded shadow hover:bg-pink-700 transition flex items-center justify-center gap-2">
+              <IoCallOutline className="text-white text-[25px]" />
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
     </nav>
