@@ -32,7 +32,7 @@ export default function Projects() {
       id: 1,
       title: "Drving School Management System",
       desc: "A Driving School Management System streamlines enrollments, lesson scheduling, payments, and instructor management for an efficient learning experience.",
-      img: "/Images/project_img/personal-portfolio.webp",
+      img: "/Images/project_img/Drving_img.webp",
       demo: "https://hari-driving.netlify.app/",
       code: "https://github.com/78suhail/Hari-Motor-Driving-School.git",
     },
