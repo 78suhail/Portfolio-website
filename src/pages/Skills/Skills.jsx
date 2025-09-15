@@ -13,7 +13,7 @@ export default function Skills() {
 
   return (
     <>
-    <section className="bg-gray-50 py-16 px-6 lg:px-20 mt-12">
+    <section className="bg-gray-50 py-16 px-6 lg:px-20 ">
       <div className="container mx-auto max-w-6xl">
         {/* Heading */}
         <div className="text-center mb-12">

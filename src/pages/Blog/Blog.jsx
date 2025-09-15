@@ -30,7 +30,7 @@ export default function Blog() {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 px-6 lg:px-20 mt-12">
+    <section className="bg-gray-50 py-16 px-6 lg:px-20">
       <div className="container mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -54,7 +54,7 @@ export default function Blog() {
               key={b.id}
               className="bg-white rounded-2xl border-2 shadow-md hover:shadow-xl transition overflow-hidden"
             >
-              <img src={b.img} alt={b.title} className="w-full h-48 object-cover" />
+              <img src={b.img} alt={b.title} className="w-full h-48 object-cover transform transition duration-500 hover:scale-105 cursor-pointer" />
               <div className="p-5">
                 <p className="text-sm text-gray-500">{b.date}</p>
                 <h3 className="text-xl font-bold text-gray-800 mt-2">{b.title}</h3>

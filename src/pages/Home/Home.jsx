@@ -7,7 +7,7 @@ import RecentProjects from "../ RecentProjects/ RecentProjects";
 const Home = () => {
   return (
     <>
-      <div className="pt-16">
+      <div>
         <HeroSection />
       </div>
       

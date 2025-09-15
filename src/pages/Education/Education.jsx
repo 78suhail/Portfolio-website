@@ -2,114 +2,81 @@ import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import Testimonials from "../Testimonials/Testimonials";
 
+const EducationItem = ({ institution, degree, period }) => (
+  <li className="flex items-start space-x-4">
+    <FaGraduationCap className="text-red-500 text-3xl flex-shrink-0" />
+    <div>
+      <h4 className="text-xl font-bold text-purple-900">{institution}</h4>
+      <p className="text-gray-700">{degree} ({period})</p>
+    </div>
+  </li>
+);
+
+const SkillItem = ({ name, percentage }) => (
+  <li className="space-y-1">
+    <div className="flex justify-between text-gray-700 text-sm">
+      <span>{name}</span>
+      <span>{percentage}%</span>
+    </div>
+    <div className="bg-gray-200 h-2 rounded-full">
+      <div
+        className="bg-purple-900 h-2 rounded-full"
+        style={{ width: `${percentage}%` }}
+      ></div>
+    </div>
+  </li>
+);
+
 const Education = () => {
   return (
     <>
       <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-6">
-          <h2 className="text-5xl font-bold text-purple-900 mb-8 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-purple-900 mb-12 text-center">
             I'm great in what I do and{" "}
             <span className="text-red-500">I'm loving it</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             {/* Education Section */}
             <div>
-              <h3 className="text-3xl font-bold text-purple-900 mb-6">
+              <h3 className="text-2xl sm:text-3xl font-bold text-purple-900 mb-6">
                 Education
               </h3>
               <ul className="space-y-6">
-                <li className="flex items-center">
-                  <FaGraduationCap className="text-red-500 text-3xl mr-4" />
-                  <div>
-                    <h4 className="text-xl font-bold text-purple-900">
-                      Indira Gandhi National Open University (IGNOU)
-                    </h4>
-                    <p className="text-gray-700">
-                      Master of Computer Applications (MCA) (2022- 2024)
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-center">
-                  <FaGraduationCap className="text-red-500 text-3xl mr-4" />
-                  <div>
-                    <h4 className="text-xl font-bold text-purple-900">
-                      Deen Dayal Upadhyay University (DDU)
-                    </h4>
-                    <p className="text-gray-700">
-                      Bachelor of Computer Applications (BCA) (2018 - 2021)
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-center">
-                  <FaGraduationCap className="text-red-500 text-3xl mr-4" />
-                  <div>
-                    <h4 className="text-xl font-bold text-purple-900">BRD</h4>
-                    <p className="text-gray-700">
-                      Secondary School (2016 - 2018)
-                    </p>
-                  </div>
-                </li>
+                <EducationItem
+                  institution="Indira Gandhi National Open University (IGNOU)"
+                  degree="Master of Computer Applications (MCA)"
+                  period="2022-2024"
+                />
+                <EducationItem
+                  institution="Deen Dayal Upadhyay University (DDU)"
+                  degree="Bachelor of Computer Applications (BCA)"
+                  period="2018-2021"
+                />
+                <EducationItem
+                  institution="BRD"
+                  degree="Secondary School"
+                  period="2016-2018"
+                />
               </ul>
             </div>
 
             {/* Skills Section */}
             <div>
-              <h3 className="text-3xl font-bold text-purple-900 mb-6">Skill</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-purple-900 mb-6">
+                Skills
+              </h3>
               <ul className="space-y-4">
-                <li>
-                  <div className="flex justify-between text-gray-700">
-                    <span>Communication</span>
-                    <span>95%</span>
-                  </div>
-                  <div className="bg-gray-200 h-2 rounded-full">
-                    <div
-                      className="bg-purple-900 h-2 rounded-full"
-                      style={{ width: "95%" }}
-                    ></div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between text-gray-700">
-                    <span>Problem Solving</span>
-                    <span>70%</span>
-                  </div>
-                  <div className="bg-gray-200 h-2 rounded-full">
-                    <div
-                      className="bg-purple-900 h-2 rounded-full"
-                      style={{ width: "70%" }}
-                    ></div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between text-gray-700">
-                    <span>Web Application</span>
-                    <span>90%</span>
-                  </div>
-                  <div className="bg-gray-200 h-2 rounded-full">
-                    <div
-                      className="bg-purple-900 h-2 rounded-full"
-                      style={{ width: "90%" }}
-                    ></div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between text-gray-700">
-                    <span>Algorithm & Data Structure</span>
-                    <span>75%</span>
-                  </div>
-                  <div className="bg-gray-200 h-2 rounded-full">
-                    <div
-                      className="bg-purple-900 h-2 rounded-full"
-                      style={{ width: "75%" }}
-                    ></div>
-                  </div>
-                </li>
+                <SkillItem name="Communication" percentage={95} />
+                <SkillItem name="Problem Solving" percentage={70} />
+                <SkillItem name="Web Application" percentage={90} />
+                <SkillItem name="Algorithm & Data Structure" percentage={75} />
               </ul>
             </div>
           </div>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-12">
             <a
               href="/contact"
               className="text-red-500 hover:underline text-lg font-medium"

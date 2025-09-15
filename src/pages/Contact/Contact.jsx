@@ -9,10 +9,11 @@ import {
 } from "react-icons/fa";
 import Testimonials from "../Testimonials/Testimonials";
 
+
 export default function Contact() {
   return (
     <>
-      <section className="bg-gray-50 py-16 px-6 lg:px-20 mt-10">
+      <section className="bg-gray-50 py-16 px-6 lg:px-20 ">
         {/* Unique Heading */}
         <div className="text-center mb-12">
           <h3 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-800 to-red-500 inline-block">
@@ -141,6 +142,7 @@ export default function Contact() {
 
       <div>
         <Testimonials />
+        
       </div>
     </>
   );

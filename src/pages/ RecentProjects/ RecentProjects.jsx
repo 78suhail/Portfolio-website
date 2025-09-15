@@ -10,30 +10,30 @@ export default function RecentProjects() {
     {
       id: 1,
       title: "E-Commerce Website",
-      img: "/Images/online-fashion-shopping-with-laptop_23-2150400630.avif",
+      img: "/Images/project_img/Ecommrace_img2.webp",
       demo: "#",
-      code: "#",
+      code: "https://github.com/78suhail/MERN-E-commerce.git",
     },
     {
       id: 2,
       title: "Portfolio Website",
-      img: "/person-front-computer-working-html.jpg",
-      demo: "#",
-      code: "#",
+      img: "/Images/project_img/personal-portfolio.webp",
+      demo: "https://codersuhail.netlify.app/",
+      code: "https://github.com/78suhail/Portfolio-website.git",
     },
     {
       id: 3,
       title: "Gym Management System",
-      img: "/Images/gym.jpg",
-      demo: "#",
-      code: "#",
+      img: "/Images/project_img/gym_img2.webp",
+      demo: "https://s-fitzone.netlify.app/",
+      code: "https://github.com/78suhail/Gym-Management-System.git",
     },
     {
       id: 4,
       title: "Driving School Management System",
-      img: "/Images/Drving.jpg",
-      demo: "#",
-      code: "#",
+      img: "/Images/project_img/Drving_img.webp",
+      demo: "https://hari-driving.netlify.app/",
+      code: "https://github.com/78suhail/Hari-Motor-Driving-School.git",
     },
   ];
 
@@ -69,7 +69,7 @@ export default function RecentProjects() {
                 <img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover transform transition duration-500 hover:scale-105 cursor-pointer"
                 />
                 <div className="p-5">
                   <h3 className="text-lg font-bold text-gray-800">{p.title}</h3>

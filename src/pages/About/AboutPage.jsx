@@ -1,7 +1,17 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { FaCode, FaServer, FaProjectDiagram } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutPage() {
+
+   const navigate = useNavigate();
+ 
+   // Scroll to top on component mount
+   useEffect(() => {
+     window.scrollTo({ top: 0, behavior: "smooth" });
+   }, []);
+
+
   const services = [
     {
       icon: <FaCode size={40} className="text-purple-500" />,
@@ -27,7 +37,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <section className="bg-[#f9fbff] py-20 px-6 lg:px-20">
+    <section className="bg-[#f9fbff] py-16 lg:py-20 px-6 lg:px-20">
       <div className="container mx-auto flex flex-col lg:flex-row items-start gap-12">
         {/* Left Content */}
         <div className="flex-1">
@@ -46,7 +56,7 @@ export default function AboutPage() {
             to developing robust backends using Node.js, Express, and MongoDB —  
             I create full-stack solutions that are clean, fast, and reliable. 🚀
           </p>
-          <button className="mt-8 px-6 py-3 bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition">
+          <button onClick={() => navigate('/contact')}  className="mt-8 px-6 py-3 bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition">
             Hire Me
           </button>
         </div>

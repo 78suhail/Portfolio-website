@@ -6,25 +6,28 @@ import {
   FaEnvelope,
   FaYoutube,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
   const socialLinks = [
-    { icon: FaFacebook, href: "#", label: "Facebook" },
-    { icon: FaGithub, href: "#", label: "GitHub" },
-    { icon: FaLinkedin, href: "#", label: "LinkedIn" },
-    { icon: FaEnvelope, href: "#", label: "Email" },
-    { icon: FaYoutube, href: "#", label: "YouTube" },
+    { icon: FaFacebook, href: "https://facebook.com/yourprofile", label: "Facebook" },
+    { icon: FaGithub, href: "https://github.com/yourprofile", label: "GitHub" },
+    { icon: FaLinkedin, href: "https://linkedin.com/in/yourprofile", label: "LinkedIn" },
+    { icon: FaEnvelope, href: "mailto:youremail@gmail.com", label: "Email" },
+    { icon: FaYoutube, href: "https://youtube.com/@yourchannel", label: "YouTube" },
   ];
 
   return (
     <div className="bg-gray-50 flex items-center justify-center px-4 sm:px-8 md:px-12 py-16">
       <div className="w-full max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        
         {/* Left Side - Image */}
         <div
           className={`flex-1 flex justify-center transition-all duration-1000 ${
@@ -33,7 +36,7 @@ export default function HeroSection() {
         >
           <div className="w-40 sm:w-56 md:w-72 lg:w-96 aspect-square rounded-full overflow-hidden shadow-lg">
             <img
-              src="/Logo.png"
+              src="/suhail.webp"
               alt="profile"
               className="object-cover w-full h-full"
             />
@@ -70,6 +73,8 @@ export default function HeroSection() {
               <a
                 key={i}
                 href={social.href}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={social.label}
                 className="p-3 bg-white rounded-full shadow-md text-gray-600 hover:text-purple-700 hover:shadow-lg transition"
               >
@@ -80,10 +85,20 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-            <button className="w-full sm:w-auto px-6 py-3 bg-red-500 text-white rounded-xl shadow-md hover:bg-red-600 transition">
+            {/* Download CV */}
+            <a
+              href="/Suhail_CV.pdf"       
+              download="Suhail_CV.pdf"    
+              className="w-full sm:w-auto px-6 py-3 bg-red-500 text-white rounded-xl shadow-md hover:bg-red-600 transition text-center"
+            >
               📄 Download CV
-            </button>
-            <button className="w-full sm:w-auto px-6 py-3 border-2 border-purple-500 rounded-xl hover:bg-purple-50 text-purple-700 transition">
+            </a>
+
+            {/* Navigate to Contact */}
+            <button
+              onClick={() => navigate("/contact")}
+              className="w-full sm:w-auto px-6 py-3 border-2 border-purple-500 rounded-xl hover:bg-purple-50 text-purple-700 transition"
+            >
               💬 Let’s Talk
             </button>
           </div>

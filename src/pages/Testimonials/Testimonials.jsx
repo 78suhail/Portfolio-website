@@ -1,8 +1,16 @@
-import React from 'react';
-import { FaQuoteLeft, FaArrowRight, FaExternalLinkAlt } from 'react-icons/fa';
+import React, { useEffect } from 'react';
+import { FaQuoteLeft, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Testimonials = () => {
+  const navigate = useNavigate();
+
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const testimonials = [
     {
       id: 1,
@@ -25,17 +33,16 @@ const Testimonials = () => {
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       testimonial: "I loved working with this team! They really understood the design process and delivered an exceptional product that exceeded my expectations."
     },
- 
   ];
 
-  // Animation variants for scroll
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-4">
+    <div className="min-h-screen bg-gray-50 py-2 lg:py-8 px-4">
+
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -57,7 +64,6 @@ const Testimonials = () => {
               about me
             </span>
           </h1>
-         
         </div>
 
         {/* Testimonials Grid */}
@@ -110,7 +116,10 @@ const Testimonials = () => {
             <p className="text-purple-100 mb-6 text-lg">
               Join these satisfied clients and let's create something amazing together.
             </p>
-            <button className="bg-white text-purple-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
+            <button 
+              onClick={() => navigate('/contact')} 
+              className="bg-white text-purple-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+            >
               Get Started Today
             </button>
           </div>
