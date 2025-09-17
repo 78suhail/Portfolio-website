@@ -7,6 +7,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import Education from "../Education/Education";
+const [loaded, setLoaded] = useState(false);
 
 const AboutPage2 = () => {
   return (
@@ -27,12 +28,23 @@ const AboutPage2 = () => {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
           {/* Left Section - Image */}
           <div className="md:w-1/2 flex justify-center relative">
+            {/* Spinner while loading */}
+            {!loaded && (
+              <div className="flex items-center justify-center w-full max-w-sm h-64 bg-gray-100 rounded-md">
+                <div className="w-12 h-12 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+              </div>
+            )}
+
+            {/* Lazy-loaded Image */}
             <img
               src="/About_image.webp"
               alt="Profile"
-              loading="eager" 
-              decoding="async" 
-              className="rounded-md shadow-lg w-full max-w-sm h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer"
+              loading="lazy"
+              decoding="async"
+              onLoad={() => setLoaded(true)}
+              className={`rounded-md shadow-lg w-full max-w-sm h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer ${
+                loaded ? "opacity-100" : "opacity-0"
+              }`}
             />
           </div>
 
