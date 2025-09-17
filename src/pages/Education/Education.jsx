@@ -30,7 +30,7 @@ const SkillItem = ({ name, percentage }) => (
 const Education = () => {
   return (
     <>
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 lg:py-16 py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-purple-900 mb-12 text-center">
             I'm great in what I do and{" "}
