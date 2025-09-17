@@ -30,7 +30,9 @@ const AboutPage2 = () => {
             <img
               src="/About_image.webp"
               alt="Profile"
-              className="rounded-md shadow-lg w-full max-w-sm object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer"
+              loading="eager" 
+              decoding="async" 
+              className="rounded-md shadow-lg w-full max-w-sm h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer"
             />
           </div>
 
