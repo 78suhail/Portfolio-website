@@ -7,9 +7,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import Education from "../Education/Education";
-const [loaded, setLoaded] = useState(false);
+import { ClipLoader } from "react-spinners";
 
 const AboutPage2 = () => {
+  const [loaded, setLoaded] = useState(false);
   return (
     <>
       <section className="bg-gray-50 py-12">
@@ -28,10 +29,9 @@ const AboutPage2 = () => {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
           {/* Left Section - Image */}
           <div className="md:w-1/2 flex justify-center relative">
-            {/* Spinner while loading */}
             {!loaded && (
               <div className="flex items-center justify-center w-full max-w-sm h-64 bg-gray-100 rounded-md">
-                <div className="w-12 h-12 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+                <ClipLoader color="#3B82F6" size={50} />
               </div>
             )}
 
