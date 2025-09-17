@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React from "react";
 import {
   FaMapMarkerAlt,
   FaGraduationCap,
@@ -7,10 +7,8 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import Education from "../Education/Education";
-import { ClipLoader } from "react-spinners";
 
 const AboutPage2 = () => {
-  const [loaded, setLoaded] = useState(false);
   return (
     <>
       <section className="bg-gray-50 py-12">
@@ -29,22 +27,12 @@ const AboutPage2 = () => {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
           {/* Left Section - Image */}
           <div className="md:w-1/2 flex justify-center relative">
-            {!loaded && (
-              <div className="flex items-center justify-center w-full max-w-sm h-64 bg-gray-100 rounded-md">
-                <ClipLoader color="#3B82F6" size={50} />
-              </div>
-            )}
-
-            {/* Lazy-loaded Image */}
             <img
-              src="/About_image.webp"
+              src="/About_img.webp"
               alt="Profile"
-              loading="lazy"
-              decoding="async"
-              onLoad={() => setLoaded(true)}
-              className={`rounded-md shadow-lg w-full max-w-sm h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer ${
-                loaded ? "opacity-100" : "opacity-0"
-              }`}
+              loading="eager" 
+              decoding="async" 
+              className="rounded-md shadow-lg w-full max-w-sm h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl cursor-pointer"
             />
           </div>
 
